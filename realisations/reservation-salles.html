@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application de réservation de salles : Camille Durand, BTS SIO SLAM</title>
+  <meta name="description" content="Une application Web pour réserver les 14 salles du lycée sans doublon, livrée en cinq itérations à une cliente.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">CD</span>Camille Durand</a>
+    <nav aria-label="Pages du portfolio">
+      <ul class="nav">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../parcours.html">Parcours</a></li>
+        <li><a href="../realisations.html" aria-current="page">Réalisations</a></li>
+        <li><a href="../competences.html">Compétences</a></li>
+        <li><a href="../veille.html">Veille</a></li>
+        <li><a href="../projet.html">Projet professionnel</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="page-head">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../realisations.html">Réalisations</a><span aria-hidden="true">/</span><span>Formation</span></nav>
+      <h1 class="title">Application de réservation de salles</h1>
+    </section>
+    <div class="meta"><span>Du 06/01/25 au 14/03/25</span><span>Atelier de professionnalisation, en équipe de trois</span></div>
+
+    <div class="stack split">
+      <article class="card pad">
+        <dl class="rubriques">
+          <div><dt>Contexte</dt><dd><p>Atelier de professionnalisation de 1re année, du 06/01/25 au 14/03/25, en équipe de trois avec Inès et Hugo. Notre cliente : la responsable de la vie scolaire du lycée, qui gérait la réservation de 14 salles avec un tableur partagé et des e-mails.</p></dd></div>
+          <div><dt>Besoin et objectifs</dt><dd><p>Chaque semaine, deux ou trois salles étaient réservées deux fois. Objectif : une application Web où les enseignants voient les salles libres et réservent eux-mêmes, sans doublon possible, pendant que la vie scolaire garde la main sur les salles. Contrainte : une recette avant la fin de l'atelier, le 14 mars.</p></dd></div>
+          <div><dt>Mon rôle</dt><dd><p>J'ai mené les deux entretiens avec la cliente, conçu le modèle de données et développé le module de réservation, avec le contrôle des conflits. J'ai aussi écrit le cahier de recette. Inès a fait l'interface et l'authentification, Hugo l'administration des salles et le suivi du planning. Chaque fusion passait par la revue de code d'un autre membre de l'équipe.</p></dd></div>
+          <div><dt>Démarche et choix</dt><dd><p>Cinq itérations de deux semaines, un tableau Kanban et une démonstration à la cliente à la fin de chacune. L'application est écrite en PHP 8 avec PDO et MySQL, le code est sur GitHub, avec une branche par fonctionnalité.</p><p>J'ai vérifié les conflits dans une transaction, côté base, plutôt que seulement dans le formulaire : deux enseignants pouvaient valider la même salle à la même seconde.</p></dd></div>
+          <div><dt>Difficultés et erreurs</dt><dd><p>À la troisième démonstration, la cliente a demandé des réservations répétées chaque semaine : impossible dans le délai. Nous avons proposé une répétition limitée à quatre semaines et reporté le reste ; le compte rendu de l'itération le note.</p><p>Mon erreur : ma requête de chevauchement oubliait une réservation qui en englobe une autre. Un cas du cahier de recette l'a révélée ; je l'ai corrigée et j'ai ajouté un test automatisé.</p></dd></div>
+          <div><dt>Résultat</dt><dd><p>Recette avec la cliente le 12/03/25 : 22 cas, 21 réussis, 1 reporté (la répétition au-delà de quatre semaines). La vie scolaire a utilisé l'application sur trois salles jusqu'en juin, sans un seul doublon.</p></dd></div>
+          <div><dt>Compétences mobilisées</dt><dd><ul class="skill-list"><li><strong>Travailler en mode projet</strong><span>Planifier les activités : cinq itérations, un tableau Kanban, et un compte rendu qui explique le report de la répétition.</span></li><li><strong>Mettre à disposition des utilisateurs un service informatique</strong><span>Réaliser les tests d'intégration et d'acceptation d'un service : j'ai écrit le cahier de recette et animé la recette avec la cliente.</span></li></ul></dd></div>
+          <div><dt>Productions et preuves</dt><dd><ul class="files"><li><a href="../documents/cahier-recette-reservation.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span><span class="file-name">Cahier de recette</span><span class="file-detail">22 cas, avec les résultats du 12/03/25</span></span></a></li><li><a href="../documents/compte-rendu-iteration-3.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span><span class="file-name">Compte rendu de la troisième itération</span><span class="file-detail">Le report négocié avec la cliente</span></span></a></li><li><a href="../documents/historique-git-reservation.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span><span class="file-name">Historique Git</span><span class="file-detail">Mes commits et les revues de code, dates visibles</span></span></a></li><li><a href="../documents/modele-donnees-reservation.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span><span class="file-name">Modèle de données</span><span class="file-detail">Annoté, avec la règle de non-chevauchement</span></span></a></li></ul></dd></div>
+          <div><dt>Bilan</dt><dd><p>J'ai appris à dire non à une demande en proposant autre chose, preuve à l'appui. Je ferais écrire les cas de recette avec la cliente dès la première itération, pas à la fin.</p></dd></div>
+        </dl>
+      </article>
+
+      <aside class="card pad aside" aria-label="En bref">
+        <span class="chip">En bref</span>
+        <dl class="facts">
+          <div><dt>Période</dt><dd>Du 06/01/25 au 14/03/25</dd></div>
+          <div><dt>Cadre</dt><dd>Formation, atelier de professionnalisation, en équipe de trois</dd></div>
+          <div><dt>Compétences</dt><dd><ul class="tags"><li class="tag">Mode projet</li><li class="tag">Mise à disposition</li></ul></dd></div>
+          <div><dt>Preuves</dt><dd>4 documents, en bas de la page</dd></div>
+        </dl>
+        <a class="card-link" href="../competences.html">Voir le tableau de synthèse</a>
+      </aside>
+    </div>
+
+    <nav class="pager" aria-label="Autres réalisations">
+      <a class="next" href="veille-authentification.html"><small>Réalisation suivante</small><span>Veille sur l'authentification sans mot de passe</span></a>
+    </nav>
+  </main>
+
+  <footer class="wrap foot">
+    <span>© 2026 Camille Durand</span>
+    <nav aria-label="Informations">
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="https://reussirmonbtssio.com/cours/projet-e5/portfolio">Modèle : Réussir mon BTS SIO</a>
+    </nav>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>
